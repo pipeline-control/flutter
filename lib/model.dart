@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Model {
   String id;
   String author;

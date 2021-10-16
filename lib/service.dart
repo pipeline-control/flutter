@@ -8,7 +8,7 @@ Future<List<Model>> fetchData() async {
 
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);
-    return jsonResponse.map((data) => new Model.fromJson(data)).toList();
+    return jsonResponse.map((data) => Model.fromJson(data)).toList();
   } else {
     throw Exception('Unable to call api');
   }

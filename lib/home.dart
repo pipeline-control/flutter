@@ -3,11 +3,13 @@ import 'package:flutter_research/model.dart';
 import 'package:flutter_research/service.dart';
 
 class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Flutter-Research")),
+          title: const Center(child: Text("Flutter-Research")),
         ),
         body: FutureBuilder(
           future: fetchData(),
@@ -27,8 +29,10 @@ class Home extends StatelessWidget {
                   );
                 },
               );
-            } else if (snapshot.hasError) return Text("${snapshot.error}");
-            return Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
+            return const Center(child: CircularProgressIndicator());
           },
         ));
   }
